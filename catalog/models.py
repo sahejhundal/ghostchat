@@ -10,6 +10,7 @@ class Message(models.Model):
     userip = models.CharField(max_length=100)
     senttime = models.DateTimeField()
     content = models.TextField(max_length=1000, help_text='Type something')
+    color=models.CharField(max_length=7, default="#000000")
 
     def __str__(self):
         """String for representing the Message object."""

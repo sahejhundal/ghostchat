@@ -6,7 +6,7 @@
   <strong>Message Count: {{ messagescount }}</strong>
   <div><strong>Messages</strong>
     {% for message in messages %}
-    <p><strong>{{ message.username }}</strong>: {{ message.content}}.({{ message.senttime }})
+    <p><strong style="color: {{ message.color }}">{{ message.username }}</strong>: {{ message.content}}.({{ message.senttime }})
     {% endfor %}
   </div>
   <form name="form" action="chat" method="POST">
