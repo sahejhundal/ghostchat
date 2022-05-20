@@ -53,6 +53,11 @@ def index(request):
 
     # Generate counts of some of the main objects
     messagescount = Message.objects.all().count()
+    if messagescount==0:
+        message = Message(username="admin",userip="000000",content="Welcome!",senttime=timezone.now(),
+        color="#FF0000")
+        message.save()
+        messagescount=1
     messages = Message.objects.all()
 
     context = {
