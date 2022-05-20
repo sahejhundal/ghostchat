@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Local Chat Home</h1>
+  <p>Welcome to GhostChat, a website developed by <em>Sahej Hundal</em>!</p>
+  <strong>Message Count: {{ messagescount }}</strong>
+  <div><strong>Messages</strong>
+    {% for message in messages %}
+    <p><strong>{{ message.username }}</strong>: {{ message.content}}.({{ message.senttime }})
+    {% endfor %}
+  </div>
+  <form name="form" action="chat" method="POST">
+    {% csrf_token %}
+    <input type="text" id="message" placeholder="Type something..." name="message">
+    <button type="submit">Submit</button>
+  <form>
+{% endblock %}
